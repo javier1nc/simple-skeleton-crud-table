@@ -20,6 +20,14 @@
 	import { computePosition, autoUpdate, flip, shift, offset, arrow } from '@floating-ui/dom';
 	import { storePopup } from '@skeletonlabs/skeleton';
 	storePopup.set({ computePosition, autoUpdate, flip, shift, offset, arrow });
+
+	import { ModalContainer } from 'gros/modal'
 </script>
 
+<nav>
+ <a href="/">Home</a>
+ <a href="/table">Table</a>
+</nav>
+
 <slot />
+<ModalContainer/>
