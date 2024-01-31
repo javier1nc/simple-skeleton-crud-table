@@ -7,10 +7,19 @@
 </script>
 
 <Modal title="Update a user" icon="edit">
-    <aside>
-        <Input icon="person" label="First name" bind:value={props.first_name} field="first_name" />
-        <Input icon="person" label="Last name" bind:value={props.last_name} field="last_name" />
-        <Input icon="mail" label="Email" bind:value={props.email} field="email" />
+    <aside class="">
+        <label class="label">
+			<span class="text-black">First name</span>
+			<input class="input" type="text" bind:value={props.first_name} placeholder="Enter first name..." />
+		</label>
+        <label class="label">
+			<span class="text-black">Last name</span>
+			<input class="input" type="text" bind:value={props.last_name} placeholder="Enter last name..." />
+		</label>
+        <label class="label">
+			<span class="text-black">Email</span>
+			<input class="input" type="text" bind:value={props.email} placeholder="Enter Email..." />
+		</label>
     </aside>
 
     <svelte:fragment slot="footer">

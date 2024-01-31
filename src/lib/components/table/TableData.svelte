@@ -10,8 +10,7 @@
   import ModalCreateForm from './ModalCreateForm.svelte';
   import ModalUpdateForm from './ModalUpdateForm.svelte';
 
-   import { modal } from 'gros/modal'
-
+  import { modal } from 'gros/modal'
 
   import Update from '$lib/components/table/Modal_Update.svelte'
   import Destroy from '$lib/components/table/Modal_Destroy.svelte'
@@ -106,11 +105,6 @@
     </section>
 </div>
 
-
-<button class="btn variant-filled" on:click={modalComponentUpdateForm}>
-            <Icon icon="wpf:add-user" class="stroke-cyan-600 text-xl"/>
-            <span class="indent-1">Update A USER</span>
-        </button>
 
 
 
