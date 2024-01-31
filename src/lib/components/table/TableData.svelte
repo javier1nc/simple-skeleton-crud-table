@@ -2,7 +2,7 @@
   import Icon from '@iconify/svelte';
   import { DataHandler, Datatable, Th } from '@vincjo/datatables'
 
-  import { users } from '$lib/store/store'
+  import { users } from '$lib/store/table/store'
   import { getModalStore } from '@skeletonlabs/skeleton';
   const modalStore = getModalStore();
 

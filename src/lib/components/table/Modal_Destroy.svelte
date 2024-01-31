@@ -1,6 +1,6 @@
 <script>
     import { Modal } from 'gros/modal'
-    import { destroy } from '$lib/store/store'
+    import { destroy } from '$lib/store/table/store'
     export let close
     export let props
 </script>

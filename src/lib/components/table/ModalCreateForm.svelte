@@ -4,7 +4,7 @@
 	// Stores
 	import { getModalStore } from '@skeletonlabs/skeleton';
 
-	import { create } from '$lib/store/store'
+	import { create } from '$lib/store/table/store'
 
 	// Props
 	/** Exposes parent props to this component. */

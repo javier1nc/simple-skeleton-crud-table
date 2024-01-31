@@ -1,7 +1,7 @@
 <script>
     import { Modal } from 'gros/modal'
     import { Input } from 'gros/form'
-    import { update } from '$lib/store/store'
+    import { update } from '$lib/store/table/store'
     export let close
     export let props
 </script>
