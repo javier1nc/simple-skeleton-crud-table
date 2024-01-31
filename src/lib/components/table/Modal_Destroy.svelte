@@ -5,11 +5,10 @@
     export let props
 </script>
 
-<Modal title="Remove a user" icon="delete_forever">
-    <aside>
-        Are you sure you want to permanently delete the user "<strong
-            >{props.first_name} {props.last_name}</strong
-        >" ?
+<Modal title="Remove a user" icon="delete_forever" class="alert variant-filled-warning">
+    <aside class="m-12 w-96 text-[#e57373]">
+        Are you sure you want to permanently delete the user "<strong>{props.first_name} {props.last_name} </strong>"?
+
     </aside>
 
     <svelte:fragment slot="footer">
@@ -25,9 +24,5 @@
 
 <style>
     aside {
-        margin: 40px 40px;
-        width: 360px;
-        color: #e57373;
-        font-size: 14px;
     }
 </style>

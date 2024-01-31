@@ -1,13 +1,12 @@
 <script>
     import { Modal } from 'gros/modal'
-    import { Input } from 'gros/form'
     import { update } from '$lib/store/table/store'
     export let close
     export let props
 </script>
 
 <Modal title="Update a user" icon="edit">
-    <aside class="">
+    <aside class="m-12 w-96">
         <label class="label">
 			<span class="text-black">First name</span>
 			<input class="input" type="text" bind:value={props.first_name} placeholder="Enter first name..." />
@@ -34,8 +33,5 @@
 </Modal>
 
 <style>
-    aside {
-        width: 360px;
-        margin: 24px;
-    }
+
 </style>
