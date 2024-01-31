@@ -47,7 +47,7 @@
 					target=""
 					rel="noreferrer"
 				>
-					Discord
+					Table
 				</a>
 			</svelte:fragment>
 		</AppBar>
