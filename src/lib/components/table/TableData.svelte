@@ -1,6 +1,10 @@
 <script lang="ts">
   import Icon from '@iconify/svelte';
-  import { DataHandler, Datatable, Th } from '@vincjo/datatables'
+
+  import ThSort from '$lib/components/_ssd/ThSort.svelte';
+  import RowCount from '$lib/components/_ssd/RowCount.svelte';
+  import Pagination from '$lib/components/_ssd/Pagination.svelte';
+  import { DataHandler} from '@vincjo/datatables'
 
   import { users } from '$lib/store/table/store'
   import { getModalStore } from '@skeletonlabs/skeleton';
@@ -56,16 +60,17 @@
             <span class="indent-1">CREATE A USER</span>
         </button>
     </aside>
-    <section>
-        <Datatable {handler} rowsPerPage={false} search={false}>
-            <table bind:this={element}>
+
+    <!-- Responsive Container (recommended) -->
+    <div class="table-container">
+            <!-- Native Table Element -->
+            <table bind:this={element} class="table table-hover">
                 <thead>
                     <tr>
-                        <th/>
-                        <Th {handler} orderBy="id">ID</Th>
-                        <Th {handler} orderBy="first_name">First name</Th>
-                        <Th {handler} orderBy="last_name">Last name</Th>
-                        <Th {handler} orderBy="email">Email</Th>
+                        <ThSort {handler} orderBy="id">ID</ThSort>
+                        <ThSort {handler} orderBy="first_name">First name</ThSort>
+                        <ThSort {handler} orderBy="last_name">Last name</ThSort>
+                        <ThSort {handler} orderBy="email">Email</ThSort>
                     </tr>
                 </thead>
                 <tbody>
@@ -89,8 +94,11 @@
                     {/each}
                 </tbody>
             </table>
-        </Datatable>
-    </section>
+            <footer class="flex justify-between">
+        		<RowCount {handler} />
+        		<Pagination {handler} />
+        	</footer>
+    </div>
 </div>
 
 
