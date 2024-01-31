@@ -1,11 +1,22 @@
 <script lang="ts">
+  import Icon from '@iconify/svelte';
   import { DataHandler, Datatable, Th } from '@vincjo/datatables'
 
   import { users } from '$lib/store/store'
-  import { modal } from 'gros/modal'
+  import { getModalStore } from '@skeletonlabs/skeleton';
+  const modalStore = getModalStore();
+
+  // Modal Examples (see also root layout)
+  import ModalCreateForm from './ModalCreateForm.svelte';
+  import ModalUpdateForm from './ModalUpdateForm.svelte';
+
+   import { modal } from 'gros/modal'
+
+
   import Update from '$lib/components/table/Modal_Update.svelte'
   import Destroy from '$lib/components/table/Modal_Destroy.svelte'
-  import Create from '$lib/components/table/Modal_Create.svelte'
+
+
   const handler = new DataHandler($users, { rowsPerPage: 20 })
   const rows = handler.getRows()
 
@@ -22,13 +33,40 @@
 		  }, 2)
 	  }
   }
+
+// Custom ---
+
+	function modalComponentCreateForm(): void {
+        const c: ModalComponent = { ref: ModalCreateForm };
+        const modal: ModalSettings = {
+            type: 'component',
+            component: c,
+            title: 'Create a User',
+            body: 'Complete the form below and then press Create.',
+            response: (r) => console.log('response:', r)
+        };
+        modalStore.trigger(modal);
+    }
+
+    function modalComponentUpdateForm(): void {
+        const c: ModalComponent = { ref: ModalUpdateForm };
+        const modal: ModalSettings = {
+            type: 'component',
+            component: c,
+            title: 'Update a User',
+            body: 'Complete the form below and then press Update.',
+            response: (r) => console.log('response:', r)
+        };
+        modalStore.trigger(modal);
+    }
+
 </script>
 
 <div class="fieldset">
     <aside>
-        <button class="btn create" on:click={() => modal.open(Create)}>
-            <i class="micon">person_add</i>
-            Create a user
+        <button class="btn variant-filled" on:click={modalComponentCreateForm}>
+            <Icon icon="wpf:add-user" class="stroke-cyan-600 text-xl"/>
+            <span class="indent-1">CREATE A USER</span>
         </button>
     </aside>
     <section>
@@ -49,10 +87,10 @@
                             <td>
                                 <div class="flex">
                                     <button class="btn" on:click={() => modal.open(Update, row)}>
-                                        <i class="micon">edit</i>
+                                        <Icon icon="entypo:edit" class="stroke-cyan-600 text-xl"/>
                                     </button>
                                     <button class="btn" on:click={() => modal.open(Destroy, row)}>
-                                        <i class="micon">delete_forever</i>
+                                        <Icon icon="ic:baseline-delete" class="stroke-cyan-600 text-xl"/>
                                     </button>
                                 </div>
                             </td>
@@ -67,6 +105,12 @@
         </Datatable>
     </section>
 </div>
+
+
+<button class="btn variant-filled" on:click={modalComponentUpdateForm}>
+            <Icon icon="wpf:add-user" class="stroke-cyan-600 text-xl"/>
+            <span class="indent-1">Update A USER</span>
+        </button>
 
 
 
