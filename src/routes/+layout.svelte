@@ -56,5 +56,5 @@
 	<slot />
 </AppShell>
 <!-- <AppShell>...</AppShell> -->
-
+<Modal />
 <ModalContainer/>
