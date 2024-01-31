@@ -31,7 +31,8 @@
 	initializeStores();
 </script>
 
-
+<Modal />
+<ModalContainer/>
 <!-- App Shell -->
 <AppShell>
 	<svelte:fragment slot="header">
@@ -56,5 +57,3 @@
 	<slot />
 </AppShell>
 <!-- <AppShell>...</AppShell> -->
-<Modal />
-<ModalContainer/>
