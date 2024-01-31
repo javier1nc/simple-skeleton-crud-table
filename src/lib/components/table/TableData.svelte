@@ -66,7 +66,9 @@
             <!-- Native Table Element -->
             <table bind:this={element} class="table table-hover">
                 <thead>
+
                     <tr>
+                        <th /> <!-- empy header -->
                         <ThSort {handler} orderBy="id">ID</ThSort>
                         <ThSort {handler} orderBy="first_name">First name</ThSort>
                         <ThSort {handler} orderBy="last_name">Last name</ThSort>
