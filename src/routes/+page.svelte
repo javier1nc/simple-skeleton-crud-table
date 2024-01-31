@@ -6,7 +6,7 @@
 		<p>Start by exploring:</p>
 		<ul>
 			<li>barebones layout</li>
-			<li>barebones layout</li>
+			<li>to CRUD table layout</li>
 		</ul>
 	</div>
 </div>
