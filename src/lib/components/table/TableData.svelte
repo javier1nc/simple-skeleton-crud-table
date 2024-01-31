@@ -8,7 +8,6 @@
 
   // Modal Examples (see also root layout)
   import ModalCreateForm from './ModalCreateForm.svelte';
-  import ModalUpdateForm from './ModalUpdateForm.svelte';
 
   import { modal } from 'gros/modal'
 
@@ -47,17 +46,6 @@
         modalStore.trigger(modal);
     }
 
-    function modalComponentUpdateForm(): void {
-        const c: ModalComponent = { ref: ModalUpdateForm };
-        const modal: ModalSettings = {
-            type: 'component',
-            component: c,
-            title: 'Update a User',
-            body: 'Complete the form below and then press Update.',
-            response: (r) => console.log('response:', r)
-        };
-        modalStore.trigger(modal);
-    }
 
 </script>
 
