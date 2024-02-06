@@ -23,7 +23,6 @@
 	storePopup.set({ computePosition, autoUpdate, flip, shift, offset, arrow });
 
 	import { ModalContainer } from 'gros/modal'
-
 	import { Modal } from '@skeletonlabs/skeleton';
 
 	//Initialize Stores Modals
